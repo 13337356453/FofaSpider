@@ -12,7 +12,6 @@
 使用idea导入该项目，如下。
 ![](/images/1.png)
 右击**pom.xml**，点击**Maven**下的**Reimport**
-
 ![2](images\2.png)
 
 加载完成后打开**src/main/java/org/manlu/tools/Cipher.java**文件，将第6行的**key**修改为任意值
