@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -92,6 +93,9 @@ public class ExportController implements Initializable {
     private TextField db_field;
 
     @FXML
+    private RadioButton no_repeat_btn;
+
+    @FXML
     void path_up(Event event) {
 
     }
@@ -126,6 +130,7 @@ public class ExportController implements Initializable {
 
         }
         if (flag) {
+//            System.out.println(no_repeat_btn.isSelected());
             List data;
             if (datasource_box.getValue().strip().split("\\.")[0].equals("2")) {
                 data = MainController.api_data;
@@ -138,6 +143,7 @@ public class ExportController implements Initializable {
                     file.createNewFile();
                 }
                 FileWriter writer = new FileWriter(file, true);
+                List<String> ips=new ArrayList<>();
                 for (int i = 0; i < data.size(); i++) {
 //                    System.out.println("HOST=" + data.get(i).getHost() + ",IP=" + data.get(i).getIp() + ",PORT=" + data.get(i).getPort());
                     Datai datai;
@@ -147,6 +153,12 @@ public class ExportController implements Initializable {
                     }else{
                         Api_Data tmp= (Api_Data) data.get(i);
                         datai=new Datai(tmp.getIp(),tmp.getHost(),tmp.getPort());
+                    }
+                    if (no_repeat_btn.isSelected()){
+                        if (ips.contains(datai.getIp())){
+                            continue;
+                        }
+                        ips.add(datai.getIp());
                     }
                     StringBuilder sb = new StringBuilder();
                     if (needs[0] == 1) sb.append(datai.getIp()).append("\t");
