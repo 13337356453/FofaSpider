@@ -40,6 +40,11 @@
                               <Font size="16.0" />
                            </font>
                         </Button>
+                        <RadioButton fx:id="no_repeat_btn" layoutX="180.0" layoutY="20.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="90.0" text="通过IP去重">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </RadioButton>
                      </children>
                   </AnchorPane>
             </content>
