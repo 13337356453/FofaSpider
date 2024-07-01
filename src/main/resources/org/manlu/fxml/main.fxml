@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="tabpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.manlu.controller.MainController">
+  <tabs>
+    <Tab text="Fofa爬虫">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="fofa_label1" layoutX="20.0" layoutY="20.0" prefHeight="30.0" prefWidth="94.0" text="Fofa爬虫">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="60.0" prefHeight="30.0" text="关键字">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="fo_kw_field" layoutX="84.0" layoutY="60.0" prefHeight="29.0" prefWidth="256.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="fo_kw_cls_btn" layoutX="350.0" layoutY="60.0" mnemonicParsing="false" onAction="#fo_kw_cls" text="清空">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="20.0" layoutY="110.0" prefHeight="30.0" text="Cookie">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="fo_cookie_field" layoutX="84.0" layoutY="110.0" prefHeight="150.0" prefWidth="257.0" wrapText="true" />
+                  <Button fx:id="fo_save_cookie_btn" layoutX="350.0" layoutY="120.0" mnemonicParsing="false" onAction="#fo_save_cookie" text="保存">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="fo_test_btn" layoutX="350.0" layoutY="170.0" mnemonicParsing="false" onAction="#fo_test_btn" text="测试">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="fo_cls_cookie_btn" layoutX="350.0" layoutY="220.0" mnemonicParsing="false" onAction="#fo_cls_cookie" text="清空">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="450.0" layoutY="20.0" text="显示的数据">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <CheckBox disable="true" layoutX="450.0" layoutY="67.0" mnemonicParsing="false" selected="true" text="IP">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox disable="true" layoutX="450.0" layoutY="112.0" mnemonicParsing="false" selected="true" text="HOST">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox disable="true" layoutX="450.0" layoutY="157.0" mnemonicParsing="false" selected="true" text="PORT">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <Button fx:id="fo_start_btn" layoutX="600.0" layoutY="30.0" mnemonicParsing="false" onAction="#fo_start" text="开始爬取">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="fo_end_spi_btn" layoutX="600.0" layoutY="100.0" mnemonicParsing="false" onAction="#fo_end_spi" text="结束爬取">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="fo_cls_res_btn" layoutX="600.0" layoutY="170.0" mnemonicParsing="false" onAction="#fo_cls_res" text="清空结果">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <TextArea fx:id="fo_console" layoutX="450.0" layoutY="210.0" prefHeight="50.0" prefWidth="300.0" />
+                  <TableView fx:id="fo_result" layoutX="370.0" layoutY="280.0" prefHeight="301.0" prefWidth="379.0">
+                    <columns>
+                      <TableColumn fx:id="fo_ip_col" prefWidth="111.0" text="IP" />
+                      <TableColumn fx:id="fo_host_col" prefWidth="175.0" text="HOST" />
+                        <TableColumn fx:id="fo_port_col" minWidth="0.0" prefWidth="92.0" text="PORT" />
+                    </columns>
+                  </TableView>
+                  <ProgressBar fx:id="fo_progressbar" layoutX="20.0" layoutY="550.0" prefHeight="30.0" prefWidth="330.0" progress="0.0" />
+                  <Button fx:id="fo_ex_btn" layoutX="30.0" layoutY="350.0" mnemonicParsing="false" onAction="#fo_ex" prefHeight="30.0" prefWidth="100.0" text="导出数据">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="fo_nd" layoutX="20.0" layoutY="517.0" text="当前数据量：0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="FofaAPI爬虫">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="api_label1" layoutX="20.0" layoutY="20.0" text="邮箱">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="api_email_field" layoutX="63.0" layoutY="20.0" prefHeight="29.0" prefWidth="230.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="318.0" layoutY="20.0" prefHeight="24.0" prefWidth="63.0" text="APIKey">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="api_key_field" layoutX="381.0" layoutY="20.0" prefHeight="29.0" prefWidth="312.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="api_save_data_btn" layoutX="710.0" layoutY="20.0" mnemonicParsing="false" onAction="#api_save_data" prefHeight="25.0" prefWidth="60.0" text="保存">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="20.0" layoutY="70.0" text="关键词">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="api_kw_field" layoutX="83.0" layoutY="70.0" prefHeight="29.0" prefWidth="610.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="api_clear_kw_btn" layoutX="710.0" layoutY="70.0" mnemonicParsing="false" onAction="#api_clear_kw" prefHeight="25.0" prefWidth="60.0" text="清空">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="api_test_api_btn" layoutX="40.0" layoutY="120.0" mnemonicParsing="false" onAction="#api_test_api" text="测试API">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="api_start_btn" layoutX="230.0" layoutY="120.0" mnemonicParsing="false" onAction="#api_start" text="开始爬取">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="api_end_btn" layoutX="420.0" layoutY="120.0" mnemonicParsing="false" onAction="#api_end" text="结束爬取">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="api_cls_res_btn" layoutX="600.0" layoutY="120.0" mnemonicParsing="false" onAction="#api_cls_res" text="清空结果">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="api_result" layoutX="173.0" layoutY="177.0" prefHeight="394.0" prefWidth="593.0">
+                     <columns>
+                        <TableColumn fx:id="api_table_ip_col" prefWidth="200.0" text="IP" />
+                        <TableColumn fx:id="api_table_host_col" minWidth="0.0" prefWidth="273.0" text="HOST" />
+                        <TableColumn fx:id="api_table_port_col" prefWidth="119.0" text="PORT" />
+                     </columns></TableView>
+                  <Label layoutX="23.0" layoutY="206.0" text="显示的数据">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <CheckBox disable="true" layoutX="24.0" layoutY="252.0" mnemonicParsing="false" selected="true" text="IP">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox disable="true" layoutX="23.0" layoutY="290.0" mnemonicParsing="false" selected="true" text="HOST" />
+                  <CheckBox disable="true" layoutX="24.0" layoutY="326.0" mnemonicParsing="false" selected="true" text="PORT" />
+                  <Label fx:id="api_nd" layoutX="26.0" layoutY="571.0" prefHeight="23.0" prefWidth="130.0" text="当前数据量：0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="api_ex_btn" layoutX="30.0" layoutY="520.0" mnemonicParsing="false" onAction="#api_ex" text="导出数据">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="kw_tab" text="关键词生成器">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="kw_label1" layoutX="20.0" layoutY="20.0" prefHeight="25.0" prefWidth="34.0" text="APP">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_app_field" layoutX="54.0" layoutY="20.0" prefHeight="20.0" prefWidth="200.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="kw_label" layoutX="267.0" layoutY="20.0" prefHeight="25.0" prefWidth="46.0" text="PORT">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_port_field" layoutX="320.0" layoutY="20.0" prefHeight="29.0" prefWidth="89.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="kw_label2" layoutX="430.0" layoutY="20.0" prefHeight="25.0" prefWidth="60.0" text="Header">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_header_field" layoutX="490.0" layoutY="20.0" prefHeight="20.0" prefWidth="293.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="kw_label_3" layoutX="22.0" layoutY="70.0" prefHeight="25.0" text="Country">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_country_field" layoutX="93.0" layoutY="70.0" prefHeight="20.0" prefWidth="50.0" promptText="CN">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="160.0" layoutY="70.0" prefHeight="25.0" text="Region">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_region_field" layoutX="219.0" layoutY="70.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="420.0" layoutY="70.0" prefHeight="25.0" text="Title">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_title_field" layoutX="460.0" layoutY="70.0" prefHeight="29.0" prefWidth="322.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="22.0" layoutY="120.0" prefHeight="25.0" text="Body">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_body_field" layoutX="74.0" layoutY="120.0" prefHeight="29.0" prefWidth="709.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="22.0" layoutY="170.0" prefHeight="25.0" text="Fid">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_fid_field" layoutX="54.0" layoutY="170.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="254.0" layoutY="170.0" prefHeight="25.0" text="Domain">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_domain_field" layoutX="320.0" layoutY="170.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="529.0" layoutY="170.0" prefHeight="25.0" text="Status_code">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_statuscode_field" layoutX="625.0" layoutY="170.0" prefHeight="20.0" prefWidth="156.0" promptText="200">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="22.0" layoutY="220.0" prefHeight="25.0" text="IP">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_ip_field" layoutX="45.0" layoutY="220.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="252.0" layoutY="220.0" prefHeight="25.0" text="Host">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_host_field" layoutX="299.0" layoutY="220.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="499.0" layoutY="220.0" prefHeight="25.0" text="Server">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_server_field" layoutX="556.0" layoutY="221.0" prefHeight="29.0" prefWidth="227.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="26.0" layoutY="270.0" prefHeight="25.0" text="Icon_hash">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_icon_field" layoutX="107.0" layoutY="271.0" prefHeight="29.0" prefWidth="158.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="274.0" layoutY="270.0" prefHeight="25.0" text="Js_name">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_js_field" layoutX="346.0" layoutY="270.0" prefHeight="29.0" prefWidth="173.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="533.0" layoutY="270.0" prefHeight="25.0" text="City">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kw_city_field" layoutX="575.0" layoutY="270.0" prefHeight="29.0" prefWidth="205.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="kw_gene_btn" layoutX="26.0" layoutY="321.0" mnemonicParsing="false" onAction="#gene_kw" prefHeight="45.0" prefWidth="80.0" text="生成">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <TextArea fx:id="kw_kw_field" editable="false" layoutX="128.0" layoutY="321.0" prefHeight="269.0" prefWidth="648.0" text="&#10;">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextArea>
+                  <Button fx:id="kw_copy_btn" layoutX="27.0" layoutY="404.0" mnemonicParsing="false" onAction="#copy_kw" prefHeight="45.0" prefWidth="80.0" text="复制">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="kw_reset_btn" layoutX="27.0" layoutY="491.0" mnemonicParsing="false" onAction="#reset_kw" prefHeight="45.0" prefWidth="80.0" text="重置">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="icon计算器">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="30.0" layoutY="20.0" prefHeight="40.0" prefWidth="112.0" text="选择文件：">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ico_file_path" editable="false" layoutX="30.0" layoutY="70.0" prefHeight="30.0" prefWidth="685.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="ico_choice_path_btn" layoutX="727.0" layoutY="70.0" mnemonicParsing="false" onAction="#ico_choice_path" prefHeight="30.0" prefWidth="57.0" text="选择">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="ico_cal_btn" layoutX="30.0" layoutY="139.0" mnemonicParsing="false" onAction="#ico_cal" prefHeight="30.0" prefWidth="60.0" text="计算">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="ico_copy_btn" layoutX="352.0" layoutY="139.0" mnemonicParsing="false" onAction="#ico_copy" prefHeight="30.0" prefWidth="60.0" text="复制">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="ico_send_btn" layoutX="639.0" layoutY="139.0" mnemonicParsing="false" onAction="#ico_send" prefHeight="30.0" text="发送到关键词生成器">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="ico_img" fitHeight="370.0" fitWidth="370.0" layoutX="416.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextArea fx:id="ico_result" editable="false" layoutX="30.0" layoutY="200.0" prefHeight="370.0" prefWidth="370.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </TextArea>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
