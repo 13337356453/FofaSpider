@@ -171,7 +171,8 @@ public class ExportController implements Initializable {
                     if (needs[0] == 1) sb.append(datai.getIp()).append("\t");
                     if (needs[1] == 1) {
                         if (http_btn.isSelected()) {
-                            sb.append("http://").append(datai.getHost()).append("\t");
+                            if (datai.getHost().substring(0,4).equals("http")) sb.append(datai.getHost()).append("\t");
+                            else sb.append("http://").append(datai.getHost()).append("\t");
                         } else{
                             sb.append(datai.getHost()).append("\t");
                         }
