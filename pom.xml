@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.manlu</groupId>
   <artifactId>FofaSpider</artifactId>
-  <version>1.4</version>
+  <version>1.5</version>
   <name>FofaSpider</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
